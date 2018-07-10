@@ -26,4 +26,21 @@
 }
 
 
+- (IBAction)Save:(id)sender {
+    NSString *savestring = self.Label.text;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:savestring forKey:@"savedstring"];
+    [defaults synchronize];
+}
+
+- (IBAction)Load:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *loadstring = [defaults objectForKey:@"savedstring"];
+    [self.Label setText:loadstring];
+}
+
+- (IBAction)DismissKeyboard:(id)sender {
+    [self resignFirstResponder];
+    self.Label.text = self.Textfield.text;
+}
 @end

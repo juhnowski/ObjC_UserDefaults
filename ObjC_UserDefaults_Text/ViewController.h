@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *Textfield;
+@property (weak, nonatomic) IBOutlet UILabel *Label;
+- (IBAction)Save:(id)sender;
+- (IBAction)Load:(id)sender;
 
+- (IBAction)DismissKeyboard:(id)sender;
 
 @end
 
